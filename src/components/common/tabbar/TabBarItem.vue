@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-bar-item" @click="itemClick">
+  <div class="item" @click="itemClick">
     <div v-if="!isActive"><slot name="item-icon"></slot></div>
     <div v-else><slot name="item-icon-active"></slot></div>
     <div :style="activeStyle">
@@ -33,7 +33,7 @@ export default {
     }
   },
   methods: {
-    itemClick() {
+    itemClick(){
       this.$router.replace(this.path)
     }
   }
@@ -41,14 +41,14 @@ export default {
 </script>
 
 <style>
-.tab-bar-item {
+.item {
   flex: 1;
   text-align: center;
   height: 49px;
   font-size: 14px;
 }
 
-.tab-bar-item img {
+.item img {
   width: 24px;
   height: 24px;
   margin-bottom: 2px;
